@@ -11,7 +11,6 @@ const links = [
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
-  const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -20,69 +19,49 @@ export default function Nav() {
   }, [])
 
   useEffect(() => {
-    const media = window.matchMedia('(max-width: 768px)')
-    const onChange = () => setIsMobile(media.matches)
-    onChange()
-    media.addEventListener('change', onChange)
-    return () => media.removeEventListener('change', onChange)
-  }, [])
-
-  useEffect(() => {
-    if (!isMobile) setMenuOpen(false)
-  }, [isMobile])
-
-  useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : ''
-    return () => {
-      document.body.style.overflow = ''
-    }
+    return () => { document.body.style.overflow = '' }
   }, [menuOpen])
 
   return (
-    <nav
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        zIndex: 1000,
-        padding: isMobile
-          ? (scrolled ? '14px 20px' : '20px 20px')
-          : (scrolled ? '14px 40px' : '28px 40px'),
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        transition: 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
-        background: scrolled ? 'rgba(245, 240, 232, 0.88)' : 'transparent',
-        backdropFilter: scrolled ? 'blur(12px)' : 'none',
-        borderBottom: scrolled ? '1px solid rgba(212, 201, 168, 0.5)' : 'none',
-      }}
-    >
-      {/* Logo */}
-      <a
-        href="#"
+    <>
+      <nav
+        className="site-nav"
         style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          zIndex: 1000,
+          padding: scrolled ? '14px 40px' : '28px 40px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          transition: 'padding 0.5s cubic-bezier(0.16, 1, 0.3, 1), background 0.5s cubic-bezier(0.16, 1, 0.3, 1), backdrop-filter 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
+          background: scrolled ? 'rgba(245, 240, 232, 0.88)' : 'transparent',
+          backdropFilter: scrolled ? 'blur(12px)' : 'none',
+          borderBottom: scrolled ? '1px solid rgba(212, 201, 168, 0.5)' : '1px solid transparent',
+        }}
+      >
+        {/* Logo */}
+        <a
+          href="#"
+          style={{
           fontFamily: 'var(--font-display)',
           fontSize: '1.2rem',
-          fontWeight: 600,
+          fontWeight: 400,
           color: 'var(--ink)',
           textDecoration: 'none',
           letterSpacing: '0.02em',
-        }}
-      >
-        grandkojo
-        <span style={{ color: 'var(--rust)', marginLeft: '2px' }}>.</span>
-      </a>
-
-      {/* Desktop links */}
-      {!isMobile && (
-        <div
-          style={{
-            display: 'flex',
-            gap: '40px',
-            alignItems: 'center',
+          flexShrink: 0,
           }}
         >
+          grandkojo
+          <span style={{ color: 'var(--rust)', marginLeft: '2px' }}>.</span>
+        </a>
+
+        {/* Desktop links — hidden via CSS below 769px */}
+        <div className="nav-desktop-links" style={{ display: 'flex', gap: '40px', alignItems: 'center' }}>
           {links.map((link) => (
             <a
               key={link.label}
@@ -95,6 +74,7 @@ export default function Nav() {
                 textTransform: 'uppercase',
                 color: 'var(--ink-light)',
                 textDecoration: 'none',
+                whiteSpace: 'nowrap',
               }}
             >
               {link.label}
@@ -104,6 +84,7 @@ export default function Nav() {
             href="https://portfolio.grandkojo.my"
             target="_blank"
             rel="noopener noreferrer"
+            className="nav-cta-btn"
             style={{
               fontFamily: 'var(--font-mono)',
               fontSize: '0.72rem',
@@ -115,6 +96,7 @@ export default function Nav() {
               textDecoration: 'none',
               borderRadius: '2px',
               transition: 'background 0.3s',
+              whiteSpace: 'nowrap',
             }}
             onMouseEnter={e => (e.currentTarget.style.background = 'var(--rust)')}
             onMouseLeave={e => (e.currentTarget.style.background = 'var(--ink)')}
@@ -122,22 +104,11 @@ export default function Nav() {
             Case studies →
           </a>
         </div>
-      )}
 
-      {/* Mobile hamburger */}
-      {isMobile && (
+        {/* Mobile hamburger — hidden via CSS above 768px */}
         <button
+          className="nav-hamburger"
           onClick={() => setMenuOpen(!menuOpen)}
-          style={{
-            background: 'none',
-            border: 'none',
-            cursor: 'pointer',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '5px',
-            padding: '4px',
-            zIndex: 1201,
-          }}
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
         >
           {[0, 1, 2].map(i => (
@@ -146,34 +117,55 @@ export default function Nav() {
               width: '24px',
               height: '1.5px',
               background: 'var(--ink)',
-              transition: 'all 0.3s',
+              transition: 'transform 0.3s, opacity 0.3s',
               transform: menuOpen
-                ? i === 0 ? 'rotate(45deg) translate(4px, 4px)'
+                ? i === 0 ? 'rotate(45deg) translate(4.5px, 4.5px)'
                 : i === 1 ? 'scaleX(0)'
-                : 'rotate(-45deg) translate(4px, -4px)'
+                : 'rotate(-45deg) translate(4.5px, -4.5px)'
                 : 'none',
+              opacity: menuOpen && i === 1 ? 0 : 1,
             }} />
           ))}
         </button>
-      )}
+      </nav>
 
-      {/* Mobile menu */}
+      {/* Mobile fullscreen menu */}
       {menuOpen && (
-        <div style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          background: 'rgba(245, 240, 232, 0.98)',
-          backdropFilter: 'blur(6px)',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: '28px',
-          zIndex: 1200,
-        }}>
+        <div
+          style={{
+            position: 'fixed',
+            inset: 0,
+            background: 'rgba(245, 240, 232, 0.98)',
+            backdropFilter: 'blur(6px)',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '28px',
+            zIndex: 1100,
+          }}
+        >
+          {/* Close button pinned to same spot as hamburger */}
+          <button
+            onClick={() => setMenuOpen(false)}
+            aria-label="Close menu"
+            style={{
+              position: 'absolute',
+              top: '20px',
+              right: '20px',
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              padding: '8px',
+              zIndex: 1101,
+            }}
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" strokeWidth="1.5">
+              <line x1="4" y1="4" x2="20" y2="20" />
+              <line x1="20" y1="4" x2="4" y2="20" />
+            </svg>
+          </button>
+
           {links.map((link) => (
             <a
               key={link.label}
@@ -205,6 +197,24 @@ export default function Nav() {
           </a>
         </div>
       )}
-    </nav>
+
+      <style>{`
+        .nav-hamburger {
+          display: none;
+          background: none;
+          border: none;
+          cursor: pointer;
+          flex-direction: column;
+          gap: 5px;
+          padding: 4px;
+          z-index: 1201;
+        }
+        @media (max-width: 768px) {
+          .nav-desktop-links { display: none !important; }
+          .nav-hamburger { display: flex !important; }
+          .site-nav { padding: 16px 20px !important; }
+        }
+      `}</style>
+    </>
   )
 }

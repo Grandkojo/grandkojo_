@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Grandkojo - The Builder',
-  description: '',
+  title: 'Grandkojo — Software & Services | Backend Systems & AI Automation',
+  description: 'I help health, legal, and real estate teams eliminate manual bottlenecks through custom backend systems and AI-powered automation. Based in Accra, serving teams globally.',
   metadataBase: new URL('https://grandkojo.my'),
   icons: {
     icon: '/icons/gk-favicon.svg',
@@ -11,12 +11,14 @@ export const metadata: Metadata = {
     apple: '/icons/gk-favicon.svg',
   },
   openGraph: {
-    title: 'Grandkojo - The Builder',
-    description: '',
+    title: 'Grandkojo — Software & Services | Backend Systems & AI Automation',
+    description: 'I help health, legal, and real estate teams eliminate manual bottlenecks through custom backend systems and AI-powered automation. Based in Accra, serving teams globally.',
     url: 'https://grandkojo.my',
+    siteName: 'Grandkojo',
+    type: 'website',
     images: [
       {
-        url: '/og-preview.png',
+        url: 'https://grandkojo.my/og-preview.png',
         width: 1200,
         height: 630,
         type: 'image/png',
@@ -26,9 +28,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Grandkojo - The Builder',
-    description: '',
-    images: ['/og-preview.png'],
+    title: 'Grandkojo — Software & Services | Backend Systems & AI Automation',
+    description: 'I help health, legal, and real estate teams eliminate manual bottlenecks through custom backend systems and AI-powered automation. Based in Accra, serving teams globally.',
+    images: ['https://grandkojo.my/og-preview.png'],
   },
 }
 
