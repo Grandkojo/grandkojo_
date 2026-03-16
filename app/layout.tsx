@@ -3,7 +3,7 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Grandkojo - The Builder',
-  description: 'Personal website of Ernest Kojo Owusu Essien. Backend engineer, AI builder, based in Accra, Ghana.',
+  description: '',
   metadataBase: new URL('https://grandkojo.my'),
   icons: {
     icon: '/icons/gk-favicon.svg',
@@ -11,12 +11,12 @@ export const metadata: Metadata = {
     apple: '/icons/gk-favicon.svg',
   },
   openGraph: {
-    title: 'Ernest Kojo — Software Engineer & AI Builder',
-    description: 'Backend systems, AI engineering, and thoughtful software from Accra, Ghana.',
+    title: 'Grandkojo - The Builder',
+    description: '',
     url: 'https://grandkojo.my',
     images: [
       {
-        url: '/og/og-preview.png',
+        url: '/og-preview.png',
         width: 1200,
         height: 630,
         type: 'image/png',
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ernest Kojo — Software Engineer & AI Builder',
-    description: 'Backend systems, AI engineering, and thoughtful software from Accra, Ghana.',
-    images: ['/og/og-preview.png'],
+    title: 'Grandkojo - The Builder',
+    description: '',
+    images: ['/og-preview.png'],
   },
 }
 
