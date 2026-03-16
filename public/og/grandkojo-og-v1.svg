@@ -1,0 +1,24 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F5F0E8"/>
+      <stop offset="1" stop-color="#EFE7D7"/>
+    </linearGradient>
+    <filter id="shadow" x="0" y="0" width="1200" height="630" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#1A1410" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1020" cy="300" r="230" stroke="#D4C9A8" stroke-width="1"/>
+  <circle cx="1020" cy="300" r="170" stroke="#D4C9A8" stroke-width="1" opacity="0.8"/>
+  <circle cx="1020" cy="300" r="110" stroke="#C4622D" stroke-width="1" opacity="0.5"/>
+  <rect x="760" y="90" width="240" height="380" rx="16" stroke="#D4C9A8" fill="#F5F0E81A"/>
+  <rect x="98" y="106" width="2" height="420" fill="#D4C9A8"/>
+
+  <g filter="url(#shadow)">
+    <text x="140" y="300" fill="#1A1410" font-size="132" font-family="Georgia, 'Times New Roman', serif" font-weight="600">grandkojo</text>
+    <circle cx="830" cy="265" r="9" fill="#C4622D"/>
+    <text x="144" y="360" fill="#C4622D" font-size="38" font-family="'Courier New', monospace" letter-spacing="8">SOFTWARE &amp; SERVICES</text>
+  </g>
+</svg>

@@ -1,0 +1,22 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg4" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F5F0E8"/>
+      <stop offset="1" stop-color="#EDE3D1"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg4)"/>
+  <path d="M700 -40C960 20 1190 190 1240 430" stroke="#D4C9A8" stroke-width="1"/>
+  <path d="M670 -70C930 -10 1160 160 1210 400" stroke="#D4C9A8" stroke-opacity="0.7" stroke-width="1"/>
+  <path d="M640 -100C900 -40 1130 130 1180 370" stroke="#C4622D" stroke-opacity="0.35" stroke-width="1"/>
+
+  <polygon points="120,560 380,130 620,560" fill="#FFFFFF66" stroke="#D4C9A8"/>
+  <rect x="744" y="348" width="332" height="176" rx="14" fill="#F5F0E8" stroke="#D4C9A8"/>
+  <line x1="772" y1="388" x2="1038" y2="388" stroke="#D4C9A8"/>
+  <line x1="772" y1="418" x2="1010" y2="418" stroke="#D4C9A8"/>
+  <line x1="772" y1="448" x2="980" y2="448" stroke="#D4C9A8"/>
+
+  <text x="118" y="300" fill="#1A1410" font-size="126" font-family="Georgia, 'Times New Roman', serif" font-weight="600">grandkojo</text>
+  <text x="123" y="358" fill="#C4622D" font-size="34" font-family="'Courier New', monospace" letter-spacing="7">SOFTWARE &amp; CONSULTING</text>
+</svg>

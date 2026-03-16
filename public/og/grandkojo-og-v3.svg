@@ -1,0 +1,19 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F6F2EA"/>
+      <stop offset="1" stop-color="#F2EADD"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg3)"/>
+  <rect x="88" y="84" width="430" height="462" rx="16" stroke="#D4C9A8" fill="#FFFFFF55"/>
+  <rect x="126" y="126" width="154" height="154" rx="12" stroke="#C4622D" stroke-opacity="0.55"/>
+  <circle cx="478" cy="196" r="82" stroke="#C4622D" stroke-opacity="0.5"/>
+  <line x1="126" y1="340" x2="478" y2="340" stroke="#D4C9A8"/>
+  <line x1="126" y1="372" x2="444" y2="372" stroke="#D4C9A8"/>
+  <line x1="126" y1="404" x2="412" y2="404" stroke="#D4C9A8"/>
+
+  <text x="600" y="324" fill="#1A1410" font-size="128" font-family="Georgia, 'Times New Roman', serif" font-weight="600">grandkojo</text>
+  <text x="604" y="382" fill="#8B4A2F" font-size="34" font-family="'Courier New', monospace" letter-spacing="7">SOFTWARE &amp; CONSULTING</text>
+</svg>
