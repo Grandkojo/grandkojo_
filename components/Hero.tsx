@@ -134,7 +134,7 @@ export default function Hero() {
         className="hero-animate hero-animate-1"
         style={{
           position: 'absolute',
-          top: 'clamp(72px, 9vh, 120px)',
+          top: 'clamp(64px, 8vh, 110px)',
           left: '60px',
           display: 'flex',
           flexDirection: 'column',
@@ -166,14 +166,14 @@ export default function Hero() {
         style={{
           maxWidth: '1100px',
           position: 'relative',
-          paddingTop: 'clamp(84px, 10vh, 132px)',
+          paddingTop: 'clamp(132px, 16vh, 210px)',
         }}
       >
         <h1
           className="hero-animate hero-animate-2"
           style={{
             fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(4rem, 12vw, 11rem)',
+            fontSize: 'clamp(3.2rem, 10vw, 9rem)',
             fontWeight: 700,
             lineHeight: 0.9,
             color: 'var(--ink)',
@@ -183,35 +183,33 @@ export default function Hero() {
         >
           Eliminating
         </h1>
-        <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.3em', flexWrap: 'wrap' }}>
-          <h1
-            className="hero-animate hero-animate-3"
-            style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(4rem, 12vw, 11rem)',
-              fontWeight: 300,
-              fontStyle: 'italic',
-              lineHeight: 0.9,
-              color: 'var(--rust)',
-              letterSpacing: '-0.02em',
-            }}
-          >
-            manual
-          </h1>
-          <h1
-            className="hero-animate hero-animate-4"
-            style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(4rem, 12vw, 11rem)',
-              fontWeight: 700,
-              lineHeight: 0.9,
-              color: 'var(--ink)',
-              letterSpacing: '-0.02em',
-            }}
-          >
-            bottlenecks.
-          </h1>
-        </div>
+        <h1
+          className="hero-animate hero-animate-3"
+          style={{
+            fontFamily: 'var(--font-display)',
+            fontSize: 'clamp(3.2rem, 10vw, 9rem)',
+            fontWeight: 300,
+            fontStyle: 'italic',
+            lineHeight: 0.9,
+            color: 'var(--rust)',
+            letterSpacing: '-0.02em',
+          }}
+        >
+          manual
+        </h1>
+        <h1
+          className="hero-animate hero-animate-4"
+          style={{
+            fontFamily: 'var(--font-display)',
+            fontSize: 'clamp(3.2rem, 10vw, 9rem)',
+            fontWeight: 700,
+            lineHeight: 0.9,
+            color: 'var(--ink)',
+            letterSpacing: '-0.02em',
+          }}
+        >
+          bottlenecks.
+        </h1>
 
         {/* Subtext row */}
         <div

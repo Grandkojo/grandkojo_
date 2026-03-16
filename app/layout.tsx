@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     url: 'https://grandkojo.my',
     images: [
       {
-        url: '/og/grandkojo-og-v1.svg',
+        url: '/opengraph-image',
         width: 1200,
         height: 630,
         alt: 'Grandkojo — Software & Services',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Ernest Kojo — Software Engineer & AI Builder',
     description: 'Backend systems, AI engineering, and thoughtful software from Accra, Ghana.',
-    images: ['/og/grandkojo-og-v1.svg'],
+    images: ['/opengraph-image'],
   },
 }
 
