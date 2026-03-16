@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Grandkojo — Software & Services | Backend Systems & AI Automation',
-  description: 'I help health, legal, and real estate teams eliminate manual bottlenecks through custom backend systems and AI-powered automation. Based in Accra, serving teams globally.',
+  title: 'Grandkojo — Software & Services | Accra, Ghana',
+  description: 'Backend systems and AI automation for health, legal, and real estate teams. Eliminate manual bottlenecks with custom-built solutions.',
   metadataBase: new URL('https://grandkojo.my'),
   icons: {
     icon: '/icons/gk-favicon.svg',
@@ -11,8 +11,8 @@ export const metadata: Metadata = {
     apple: '/icons/gk-favicon.svg',
   },
   openGraph: {
-    title: 'Grandkojo — Software & Services | Backend Systems & AI Automation',
-    description: 'I help health, legal, and real estate teams eliminate manual bottlenecks through custom backend systems and AI-powered automation. Based in Accra, serving teams globally.',
+    title: 'Grandkojo — Software & Services | Accra, Ghana',
+    description: 'Backend systems and AI automation for health, legal, and real estate teams. Eliminate manual bottlenecks with custom-built solutions.',
     url: 'https://grandkojo.my',
     siteName: 'Grandkojo',
     type: 'website',
@@ -28,8 +28,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Grandkojo — Software & Services | Backend Systems & AI Automation',
-    description: 'I help health, legal, and real estate teams eliminate manual bottlenecks through custom backend systems and AI-powered automation. Based in Accra, serving teams globally.',
+    title: 'Grandkojo — Software & Services | Accra, Ghana',
+    description: 'Backend systems and AI automation for health, legal, and real estate teams. Eliminate manual bottlenecks with custom-built solutions.',
     images: ['https://grandkojo.my/og-preview.png'],
   },
 }
