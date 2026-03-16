@@ -131,7 +131,7 @@ export default function Hero() {
 
       {/* Top label */}
       <div
-        className="hero-animate hero-animate-1"
+        className="hero-animate hero-animate-1 hero-top-label"
         style={{
           position: 'absolute',
           top: 'clamp(64px, 8vh, 110px)',
@@ -163,6 +163,7 @@ export default function Hero() {
 
       {/* Main heading */}
       <div
+        className="hero-heading-wrap"
         style={{
           maxWidth: '1100px',
           position: 'relative',
@@ -314,7 +315,22 @@ export default function Hero() {
           .hero-right-art { display: none; }
         }
         @media (max-width: 768px) {
-          section#hero { padding: 0 24px 60px; }
+          section#hero {
+            padding: 0 24px 48px !important;
+            min-height: auto !important;
+            justify-content: flex-start !important;
+          }
+          .hero-top-label {
+            position: relative !important;
+            top: auto !important;
+            left: auto !important;
+            margin-top: 80px;
+          }
+          .hero-heading-wrap { padding-top: 32px !important; }
+        }
+        @media (max-width: 480px) {
+          .hero-top-label { margin-top: 72px; }
+          .hero-heading-wrap { padding-top: 24px !important; }
         }
       `}</style>
     </section>
