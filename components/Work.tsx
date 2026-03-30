@@ -1,31 +1,10 @@
-const projects = [
-  {
-    title: 'FeverDiff AI',
-    category: 'Healthcare AI',
-    description: 'Built an AI differential diagnosis assistant tailored to Ghana\'s disease context to support faster first-pass triage decisions.',
-    metric: '~75% average diagnostic accuracy',
-    stack: ['MedGemma', 'Gemini 2.5', 'FastAPI', 'Modal Labs'],
-    href: 'https://portfolio.grandkojo.my/projects/feverdiff-ai',
-  },
-  {
-    title: 'Hub Map GH',
-    category: 'Community Platform',
-    description: 'Launched a community-maintained ecosystem directory for Ghana\'s tech hubs, creating shared visibility for founders and builders.',
-    metric: '19 verified listings at launch',
-    stack: ['Next.js', 'Firebase', 'Gemini Pro', 'Leaflet'],
-    href: 'https://portfolio.grandkojo.my/projects/hubmap',
-  },
-  {
-    title: 'EpiScope',
-    category: 'Public Health Analytics',
-    description: 'Developed an outbreak monitoring and prediction platform combining ML forecasts and contextual AI summaries for public health teams.',
-    metric: '84% outbreak prediction accuracy',
-    stack: ['Django', 'XGBoost', 'Gemini', 'PostgreSQL'],
-    href: 'https://portfolio.grandkojo.my/projects/episcope',
-  },
-]
+import type { CaseStudyItem } from '@/lib/content'
 
-export default function Work() {
+interface WorkProps {
+  projects: CaseStudyItem[]
+}
+
+export default function Work({ projects }: WorkProps) {
   return (
     <section
       id="work"

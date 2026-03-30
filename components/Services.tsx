@@ -1,28 +1,10 @@
-const services = [
-  {
-    number: '01',
-    title: 'API Build Sprint',
-    description: 'From architecture to deployment, I build production-ready backend systems and REST APIs that give your product a reliable core.',
-    timeline: 'Typical timeline: 2-4 weeks',
-    tags: ['Django', 'Laravel', 'FastAPI', 'Java', 'PostgreSQL'],
-  },
-  {
-    number: '02',
-    title: 'AI Feature Integration',
-    description: 'I integrate LLM-powered capabilities into existing tools and workflows so your team can automate high-friction decisions and repetitive tasks.',
-    timeline: 'Typical timeline: 1-3 weeks',
-    tags: ['LLM Integrations', 'Gemini API', 'RAG', 'Prompt Workflows'],
-  },
-  {
-    number: '03',
-    title: 'Process Automation Build',
-    description: 'I replace spreadsheet-and-WhatsApp workflows with tailored internal tools that reduce manual steps and make operations predictable.',
-    timeline: 'Typical timeline: scoped per workflow',
-    tags: ['Workflow Design', 'Internal Tools', 'Automation', 'Web Apps'],
-  },
-]
+import type { ServiceItem } from '@/lib/content'
 
-export default function Services() {
+interface ServicesProps {
+  services: ServiceItem[]
+}
+
+export default function Services({ services }: ServicesProps) {
   return (
     <section
       id="services"
