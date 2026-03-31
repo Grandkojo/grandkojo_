@@ -17,9 +17,11 @@ echo "Region : ${REGION}"
 # Load .env.local if present (optional)
 if [ -f .env.local ]; then
   set -a
-  source <(sed -e 's/ *= */=/g' -e 's/^export //' .env.local | grep -v '^#')
+  # Normalize "KEY = VALUE" -> "KEY=VALUE" and strip leading 'export '
+  # Skip FIREBASE_ADMIN_SERVICE_ACCOUNT_JSON to avoid shell parsing of JSON
+  source <(sed -e 's/ *= */=/g' -e 's/^export //' .env.local | grep -v '^#' | grep -v '^FIREBASE_ADMIN_SERVICE_ACCOUNT_JSON')
   set +a
-  echo "✅ Loaded environment variables from .env.local"
+  echo "✅ Loaded environment variables from .env.local (excluding FIREBASE_ADMIN_SERVICE_ACCOUNT_JSON)"
 else
   echo "ℹ️  .env.local not found, continuing without local env file"
 fi
