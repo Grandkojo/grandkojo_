@@ -45,7 +45,7 @@ export default function Nav() {
       >
         {/* Logo */}
         <a
-          href="#"
+          href="/"
           style={{
           fontFamily: 'var(--font-display)',
           fontSize: '1.2rem',
