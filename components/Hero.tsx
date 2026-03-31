@@ -7,8 +7,8 @@ export default function Hero() {
         position: 'relative',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'flex-end',
-        padding: '0 40px 80px',
+        justifyContent: 'center',
+        padding: '40px 40px 60px',
         overflow: 'hidden',
       }}
     >
@@ -167,7 +167,7 @@ export default function Hero() {
         style={{
           maxWidth: '1100px',
           position: 'relative',
-          paddingTop: 'clamp(132px, 16vh, 210px)',
+          // paddingTop: 'clamp(96px, 12vh, 180px)',
         }}
       >
         <h1
