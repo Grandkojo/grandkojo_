@@ -41,7 +41,6 @@ export default function Footer() {
 
       <div style={{ display: 'flex', gap: '24px' }}>
         {[
-          { label: 'Portfolio', href: 'https://portfolio.grandkojo.my' },
           { label: 'GitHub', href: 'https://github.com/Grandkojo' },
           { label: 'LinkedIn', href: 'https://www.linkedin.com/in/ernest-essien-kojo' },
         ].map(link => (

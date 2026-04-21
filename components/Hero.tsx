@@ -118,17 +118,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Decorative vertical line */}
-      <div style={{
-        position: 'absolute',
-        left: '40px',
-        top: 'clamp(72px, 9vh, 120px)',
-        bottom: '80px',
-        width: '1px',
-        background: 'linear-gradient(to bottom, transparent, var(--parchment) 30%, var(--parchment) 70%, transparent)',
-        opacity: 0.6,
-      }} />
-
       {/* Top label */}
       <div
         className="hero-animate hero-animate-1 hero-top-label"
@@ -167,7 +156,7 @@ export default function Hero() {
         style={{
           maxWidth: '1100px',
           position: 'relative',
-          // paddingTop: 'clamp(96px, 12vh, 180px)',
+          paddingTop: 'clamp(96px, 14vh, 170px)',
         }}
       >
         <h1
@@ -230,7 +219,7 @@ export default function Hero() {
             maxWidth: '560px',
             lineHeight: 1.6,
           }}>
-            I help health, legal, and real estate teams eliminate painful manual processes through custom backend systems and AI-powered automation.
+            I help health, legal, and real estate teams cut manual operations and response times with custom backend systems and AI automation
           </p>
 
           <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
@@ -252,28 +241,6 @@ export default function Hero() {
               }}
             >
               Explore services
-            </a>
-            <a
-              href="https://portfolio.grandkojo.my"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hero-secondary-cta"
-              style={{
-                fontFamily: 'var(--font-mono)',
-                fontSize: '0.75rem',
-                letterSpacing: '0.1em',
-                textTransform: 'uppercase',
-                color: 'var(--ink)',
-                background: 'transparent',
-                padding: '14px 28px',
-                textDecoration: 'none',
-                border: '1px solid var(--parchment)',
-                borderRadius: '2px',
-                transition: 'border-color 0.3s, color 0.3s, transform 0.3s',
-                display: 'inline-block',
-              }}
-            >
-              Full Portfolio →
             </a>
           </div>
         </div>

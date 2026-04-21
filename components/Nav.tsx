@@ -2,10 +2,10 @@
 import { useState, useEffect } from 'react'
 
 const links = [
-  { label: 'About', href: '#about' },
-  { label: 'Services', href: '#services' },
-  { label: 'Work', href: '#work' },
-  { label: 'Connect', href: '#connect' },
+  { label: 'About', href: '/#about' },
+  { label: 'Services', href: '/#services' },
+  { label: 'Work', href: '/#work' },
+  { label: 'Connect', href: '/#connect' },
 ]
 
 export default function Nav() {
@@ -101,7 +101,7 @@ export default function Nav() {
             onMouseEnter={e => (e.currentTarget.style.background = 'var(--rust)')}
             onMouseLeave={e => (e.currentTarget.style.background = 'var(--ink)')}
           >
-            Case studies →
+            For technical people.
           </a>
         </div>
 
@@ -186,14 +186,23 @@ export default function Nav() {
             href="https://portfolio.grandkojo.my"
             target="_blank"
             rel="noopener noreferrer"
+            className="nav-cta-btn"
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '0.85rem',
-              color: 'var(--rust)',
+              fontSize: '0.72rem',
+              letterSpacing: '0.08em',
+              textTransform: 'uppercase',
+              color: 'var(--cream)',
+              background: 'var(--ink)',
+              padding: '8px 18px',
               textDecoration: 'none',
+              borderRadius: '2px',
+              transition: 'background 0.3s',
             }}
+            onMouseEnter={e => (e.currentTarget.style.background = 'var(--rust)')}
+            onMouseLeave={e => (e.currentTarget.style.background = 'var(--ink)')}
           >
-            portfolio.grandkojo.my →
+            For technical people.
           </a>
         </div>
       )}

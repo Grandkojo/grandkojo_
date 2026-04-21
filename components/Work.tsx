@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import type { CaseStudyItem } from '@/lib/content'
 
 interface WorkProps {
@@ -81,32 +82,14 @@ export default function Work({ projects }: WorkProps) {
             <span style={{ fontStyle: 'italic', fontWeight: 300 }}>real impact.</span>
           </h2>
         </div>
-        <a
-          href="https://portfolio.grandkojo.my"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="reveal link-underline"
-          style={{
-            fontFamily: 'var(--font-mono)',
-            fontSize: '0.72rem',
-            letterSpacing: '0.1em',
-            textTransform: 'uppercase',
-            color: 'var(--ink-light)',
-            textDecoration: 'none',
-          }}
-        >
-          Full technical portfolio →
-        </a>
       </div>
 
       {/* Project list */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
         {projects.map((project, i) => (
-          <a
+          <Link
             key={project.title}
-            href={project.href}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={`/case-studies/${project.slug}`}
             className={`reveal stagger-${i + 1} work-project-card`}
             style={{
               display: 'grid',
@@ -192,7 +175,7 @@ export default function Work({ projects }: WorkProps) {
             }}>
               →
             </div>
-          </a>
+          </Link>
         ))}
       </div>
 

@@ -31,6 +31,17 @@ html {
   scroll-behavior: smooth;
 }
 
+#about,
+#services,
+#servicesthis,
+#work {
+  scroll-margin-top: 108px;
+}
+
+#connect {
+  scroll-margin-top: 72px;
+}
+
 body {
   background-color: var(--cream);
   color: var(--ink);

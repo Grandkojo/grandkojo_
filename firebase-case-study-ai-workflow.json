@@ -1,0 +1,14 @@
+[
+  {
+    "id": "automated-lead-qualiier-system",
+    "slug": "automated-lead-qualiier-system",
+    "title": "Automated Lead Qualiier system",
+    "client": "Case Study",
+    "challenge": "The business was spending too much time manually screening leads, with many prospects failing qualification after long back-and-forth communication.",
+    "solution": "Implemented a 3-part automated pipeline: personalized first response with clear CTAs, instant proposal generation for qualified requests, and automated no-response status updates to keep the pipeline clean.",
+    "result": "The team now reviews fewer but better leads, reaches qualified prospects faster, and cut the lead handling cycle by about 50%.",
+    "metric": "Reduced lead screening-to-match cycle time by about 50%",
+    "valueProposition": "Improves conversion efficiency by helping the business focus on high-intent leads, respond faster, and reduce time wasted on low-quality prospects.",
+    "stack": ["Tally", "Make.com", "Airtable", "Gmail", "Slack", "Claude"]
+  }
+]

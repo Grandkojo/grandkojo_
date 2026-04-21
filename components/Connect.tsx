@@ -3,7 +3,7 @@ export default function Connect() {
     <section
       id="connect"
       style={{
-        padding: 'clamp(80px, 12vw, 140px) 40px',
+        padding: 'clamp(48px, 7vw, 84px) 40px clamp(80px, 12vw, 140px)',
         position: 'relative',
         overflow: 'hidden',
       }}
@@ -141,7 +141,6 @@ export default function Connect() {
               {[
                 { label: 'GitHub', href: 'https://github.com/Grandkojo' },
                 { label: 'LinkedIn', href: 'https://www.linkedin.com/in/ernest-essien-kojo' },
-                { label: 'Portfolio', href: 'https://portfolio.grandkojo.my' },
               ].map(link => (
                 <a
                   key={link.label}
@@ -247,7 +246,7 @@ export default function Connect() {
         }
         @media (max-width: 768px) {
           #connect-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
-          section#connect { padding: 80px 24px !important; }
+          section#connect { padding: 56px 24px 80px !important; }
           .connect-art-arch {
             width: 150px !important;
             height: 150px !important;

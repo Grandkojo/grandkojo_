@@ -68,7 +68,7 @@ export default function NotFound() {
               Back to home
             </Link>
             <Link
-              href="#services"
+              href="/#services"
               style={{
                 fontFamily: 'var(--font-mono)',
                 fontSize: '0.75rem',

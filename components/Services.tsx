@@ -13,8 +13,10 @@ export default function Services({ services }: ServicesProps) {
         background: 'var(--ink)',
         position: 'relative',
         overflow: 'hidden',
+        scrollMarginTop: '110px',
       }}
     >
+      <div id="servicesthis" style={{ position: 'absolute', top: '0', left: '0' }} aria-hidden="true" />
       {/* Texture overlay on dark bg */}
       <div style={{
         position: 'absolute',
@@ -111,8 +113,8 @@ export default function Services({ services }: ServicesProps) {
               className={`reveal card-lift stagger-${i + 1}`}
               style={{
                 padding: '48px 40px',
-                border: '1px solid rgba(212, 201, 168, 0.1)',
-                background: 'rgba(245, 240, 232, 0.03)',
+                border: '1px solid rgba(212, 201, 168, 0.18)',
+                background: 'rgba(245, 240, 232, 0.06)',
                 borderRadius: '4px',
                 display: 'flex',
                 flexDirection: 'column',
@@ -142,21 +144,32 @@ export default function Services({ services }: ServicesProps) {
               <p style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '0.95rem',
-                color: 'rgba(212, 201, 168, 0.65)',
+                color: 'rgba(245, 240, 232, 0.84)',
                 lineHeight: 1.7,
                 flexGrow: 1,
               }}>
                 {service.description}
               </p>
-              <p style={{
-                fontFamily: 'var(--font-mono)',
-                fontSize: '0.65rem',
-                letterSpacing: '0.08em',
-                textTransform: 'uppercase',
-                color: 'rgba(212, 201, 168, 0.55)',
-              }}>
-                {service.timeline}
-              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                <p style={{
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: '0.65rem',
+                  letterSpacing: '0.08em',
+                  textTransform: 'uppercase',
+                  color: 'rgba(245, 240, 232, 0.78)',
+                }}>
+                  {service.timeline}
+                </p>
+                <p style={{
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: '0.65rem',
+                  letterSpacing: '0.08em',
+                  textTransform: 'uppercase',
+                  color: 'var(--gold-light)',
+                }}>
+                  {service.price}
+                </p>
+              </div>
               <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
                 {service.tags.map(tag => (
                   <span key={tag} style={{
@@ -164,9 +177,9 @@ export default function Services({ services }: ServicesProps) {
                     fontSize: '0.62rem',
                     letterSpacing: '0.08em',
                     textTransform: 'uppercase',
-                    color: 'rgba(212, 201, 168, 0.4)',
+                    color: 'rgba(245, 240, 232, 0.72)',
                     padding: '4px 10px',
-                    border: '1px solid rgba(212, 201, 168, 0.12)',
+                    border: '1px solid rgba(212, 201, 168, 0.24)',
                     borderRadius: '2px',
                   }}>
                     {tag}

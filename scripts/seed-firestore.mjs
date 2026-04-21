@@ -41,25 +41,15 @@ const services = [
 
 const caseStudies = [
   {
-    title: 'FeverDiff AI',
-    client: 'Healthcare AI',
-    challenge: "Built an AI differential diagnosis assistant tailored to Ghana's disease context to support faster first-pass triage decisions.",
-    solution: 'MedGemma, Gemini 2.5, FastAPI, Modal Labs',
-    result: '~75% average diagnostic accuracy',
-  },
-  {
-    title: 'Hub Map GH',
-    client: 'Community Platform',
-    challenge: "Launched a community-maintained ecosystem directory for Ghana's tech hubs, creating shared visibility for founders and builders.",
-    solution: 'Next.js, Firebase, Gemini Pro, Leaflet',
-    result: '19 verified listings at launch',
-  },
-  {
-    title: 'EpiScope',
-    client: 'Public Health Analytics',
-    challenge: 'Developed an outbreak monitoring and prediction platform combining ML forecasts and contextual AI summaries for public health teams.',
-    solution: 'Django, XGBoost, Gemini, PostgreSQL',
-    result: '84% outbreak prediction accuracy',
+    title: 'Automated Lead Qualiier system',
+    client: 'Case Study',
+    challenge: 'The business was spending too much time manually screening leads, with many prospects failing qualification after long back-and-forth communication.',
+    solution: 'Implemented a 3-part automated pipeline: personalized first response with clear CTAs, instant proposal generation for qualified requests, and automated no-response status updates to keep the pipeline clean.',
+    result: 'The team now reviews fewer but better leads, reaches qualified prospects faster, and cut the lead handling cycle by about 50%.',
+    metric: 'Reduced lead screening-to-match cycle time by about 50%',
+    valueProposition: 'Improves conversion efficiency by helping the business focus on high-intent leads, respond faster, and reduce time wasted on low-quality prospects.',
+    stack: ['Tally', 'Make.com', 'Airtable', 'Gmail', 'Slack', 'Claude'],
+    slug: 'automated-lead-qualiier-system',
   },
 ]
 
