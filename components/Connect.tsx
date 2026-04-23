@@ -1,7 +1,10 @@
 export default function Connect() {
+  const CALENDLY_URL = 'https://calendly.com/essienernest-kojoowusu/30min'
+
   return (
     <section
       id="connect"
+      data-motion="slow"
       style={{
         padding: 'clamp(48px, 7vw, 84px) 40px clamp(80px, 12vw, 140px)',
         position: 'relative',
@@ -10,6 +13,7 @@ export default function Connect() {
     >
       {/* Large watermark */}
       <div
+        className="connect-watermark motion-layer motion-layer-slow"
         aria-hidden="true"
         style={{
           position: 'absolute',
@@ -29,7 +33,7 @@ export default function Connect() {
         Hello.
       </div>
       <div
-        className="connect-art connect-art-arch"
+        className="connect-art connect-art-arch motion-layer motion-layer-medium"
         aria-hidden="true"
         style={{
           position: 'absolute',
@@ -43,7 +47,7 @@ export default function Connect() {
         }}
       />
       <div
-        className="connect-art connect-art-line"
+        className="connect-art connect-art-line motion-layer motion-layer-fast"
         aria-hidden="true"
         style={{
           position: 'absolute',
@@ -126,16 +130,24 @@ export default function Connect() {
               essienernest.kojoowusu@gmail.com
             </a>
 
-            <p style={{
-              fontFamily: 'var(--font-mono)',
-              fontSize: '0.66rem',
-              letterSpacing: '0.08em',
-              textTransform: 'uppercase',
-              color: 'var(--parchment-text)',
-              marginBottom: '26px',
-            }}>
-              Calendly link to be added soon - email for now
-            </p>
+            <a
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link-underline"
+              style={{
+                fontFamily: 'var(--font-mono)',
+                fontSize: '0.66rem',
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
+                color: 'var(--parchment-text)',
+                marginBottom: '26px',
+                display: 'inline-block',
+                textDecoration: 'none',
+              }}
+            >
+              Book a 30-min call on Calendly
+            </a>
 
             <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
               {[
@@ -217,7 +229,9 @@ export default function Connect() {
             </p>
 
             <a
-              href="mailto:essienernest.kojoowusu@gmail.com?subject=Discovery%20Call%20Request"
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="connect-cta-button"
               style={{
                 fontFamily: 'var(--font-mono)',
@@ -233,7 +247,7 @@ export default function Connect() {
                 transition: 'background 0.3s',
               }}
             >
-              Request discovery call
+              Book discovery call
             </a>
           </div>
         </div>

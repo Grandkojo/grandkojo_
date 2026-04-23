@@ -5,9 +5,23 @@ interface ServicesProps {
 }
 
 export default function Services({ services }: ServicesProps) {
+  const servicesWithCarePlan: ServiceItem[] = [
+    ...services,
+    {
+      number: '04',
+      title: 'Ongoing Support / Care Plan',
+      description:
+        'After launch, I keep your system stable with monitoring, routine updates, minor improvements, and fast issue response so your team stays focused on operations.',
+      timeline: 'Typical timeline: monthly recurring support',
+      price: 'Investment: from $60/month+ depending on complexity',
+      tags: ['Monitoring', 'Bug Fixes', 'Maintenance', 'Optimization', 'SLA Support'],
+    },
+  ]
+
   return (
     <section
       id="services"
+      data-motion="medium"
       style={{
         padding: 'clamp(80px, 12vw, 140px) 40px',
         background: 'var(--ink)',
@@ -25,7 +39,7 @@ export default function Services({ services }: ServicesProps) {
         pointerEvents: 'none',
       }} />
       <div
-        className="services-art services-art-ring"
+        className="services-art services-art-ring motion-layer motion-layer-slow"
         aria-hidden="true"
         style={{
           position: 'absolute',
@@ -39,7 +53,7 @@ export default function Services({ services }: ServicesProps) {
         }}
       />
       <div
-        className="services-art services-art-pill"
+        className="services-art services-art-pill motion-layer motion-layer-medium"
         aria-hidden="true"
         style={{
           position: 'absolute',
@@ -107,7 +121,7 @@ export default function Services({ services }: ServicesProps) {
         }}
         className="services-grid"
         >
-          {services.map((service, i) => (
+          {servicesWithCarePlan.map((service, i) => (
             <div
               key={service.number}
               className={`reveal card-lift stagger-${i + 1}`}

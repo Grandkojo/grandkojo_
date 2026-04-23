@@ -2,6 +2,7 @@ export default function About() {
   return (
     <section
       id="about"
+      data-motion="medium"
       style={{
         padding: 'clamp(80px, 12vw, 140px) 40px',
         maxWidth: '1200px',
@@ -11,7 +12,7 @@ export default function About() {
       }}
     >
       <div
-        className="about-art about-art-ring"
+        className="about-art about-art-ring motion-layer motion-layer-medium"
         aria-hidden="true"
         style={{
           position: 'absolute',
@@ -25,7 +26,7 @@ export default function About() {
         }}
       />
       <div
-        className="about-art about-art-frame"
+        className="about-art about-art-frame motion-layer motion-layer-fast"
         aria-hidden="true"
         style={{
           position: 'absolute',
@@ -42,13 +43,13 @@ export default function About() {
       />
       <div style={{
         display: 'grid',
-        gridTemplateColumns: '1fr 1.6fr',
-        gap: '80px',
+        gridTemplateColumns: '1fr 1.5fr',
+        gap: '56px',
         alignItems: 'start',
       }}
       className="about-grid"
       >
-        {/* Left: Label + large number */}
+        {/* Left column: positioning */}
         <div className="reveal reveal-left">
           <span style={{
             fontFamily: 'var(--font-mono)',
@@ -62,26 +63,21 @@ export default function About() {
             01 — About
           </span>
 
-          <div style={{
+          <p style={{
             fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(5rem, 10vw, 9rem)',
-            fontWeight: 700,
-            lineHeight: 0.85,
-            color: 'var(--warm)',
-            letterSpacing: '-0.03em',
-            userSelect: 'none',
-            WebkitTextStroke: '1px var(--parchment)',
+            fontSize: 'clamp(1.5rem, 2.8vw, 2.2rem)',
+            lineHeight: 1.2,
+            color: 'var(--ink)',
+            marginBottom: '18px',
           }}>
-            Grandkojo
-          </div>
+            Backend and AI automation partner for operations-heavy teams.
+          </p>
 
-          {/* Currently doing */}
           <div style={{
-            marginTop: '48px',
-            padding: '24px',
+            padding: '22px',
             background: 'var(--warm)',
             border: '1px solid var(--parchment)',
-            borderRadius: '4px',
+            borderRadius: '8px',
           }}>
             <span style={{
               fontFamily: 'var(--font-mono)',
@@ -92,14 +88,14 @@ export default function About() {
               display: 'block',
               marginBottom: '16px',
             }}>
-              Positioning
+              Best Fit
             </span>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
               {[
-                { label: 'Who', value: 'Health, legal, and real estate teams' },
-                { label: 'Pain', value: 'Manual forms, spreadsheets, and repetitive workflows' },
-                { label: 'Fix', value: 'Custom backend systems + AI-powered automation' },
-                { label: 'Status', value: 'Open for project-based engagements' },
+                { label: 'Teams', value: 'Health, legal, and real estate operators' },
+                { label: 'Problem', value: 'Manual approvals, scattered tools, and avoidable delays' },
+                { label: 'Build', value: 'Reliable backend workflows and practical AI automations' },
+                { label: 'Engagement', value: 'Project-based delivery with clear scope and handoff' },
               ].map(item => (
                 <div key={item.label} style={{ display: 'flex', gap: '12px', alignItems: 'baseline' }}>
                   <span style={{
@@ -124,46 +120,72 @@ export default function About() {
               ))}
             </div>
           </div>
+
+          <div style={{
+            marginTop: '16px',
+            padding: '18px 20px',
+            border: '1px solid var(--parchment)',
+            borderRadius: '8px',
+            background: 'rgba(245, 240, 232, 0.5)',
+          }}>
+            <p style={{
+              fontFamily: 'var(--font-mono)',
+              fontSize: '0.64rem',
+              letterSpacing: '0.1em',
+              textTransform: 'uppercase',
+              color: 'var(--parchment-text)',
+              marginBottom: '10px',
+            }}>
+              Typical Outcomes
+            </p>
+            <p style={{
+              fontFamily: 'var(--font-body)',
+              fontSize: '0.92rem',
+              color: 'var(--ink-light)',
+              lineHeight: 1.65,
+            }}>
+              Faster response cycles, fewer workflow errors, and less time spent chasing repetitive tasks.
+            </p>
+          </div>
         </div>
 
-        {/* Right: Bio text */}
-        <div className="reveal" style={{ paddingTop: '60px' }}>
+        {/* Right column: narrative */}
+        <div className="reveal" style={{ paddingTop: '34px' }}>
           <h2 style={{
             fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(2rem, 4vw, 3.2rem)',
+            fontSize: 'clamp(2.1rem, 4.2vw, 3.4rem)',
             fontWeight: 600,
             color: 'var(--ink)',
             lineHeight: 1.15,
-            marginBottom: '32px',
+            marginBottom: '26px',
             letterSpacing: '-0.01em',
           }}>
-            High-leverage systems for teams that have outgrown{' '}
-            <span style={{ color: 'var(--rust)', fontStyle: 'italic' }}>manual work</span>.
+            Replace fragile operations with systems your team can trust.
           </h2>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
             {[
-              `I design and ship software systems that replace slow, fragile operations with reliable workflows your team can actually trust. The focus is practical: less manual overhead, fewer errors, and faster execution.`,
-              `Most of my work serves small teams in health, legal, and real estate environments where one broken process can stall the whole business. I work with stakeholders directly, then translate operational pain into clear technical delivery.`,
-              `Based in Accra and remote-friendly, I deliver build-focused engagements with clear scope, measurable outcomes, and handoff-ready systems your team can run after launch.`,
+              `I help teams move from spreadsheet-driven operations to production-ready workflows. Each build is designed around real day-to-day bottlenecks, not generic templates.`,
+              `You get direct technical ownership from planning to delivery: backend architecture, automation logic, and integration work that reduces manual effort and improves execution speed.`,
+              `Based in Accra and working remotely, I deliver practical systems with measurable outcomes and clean handoff documentation.`,
             ].map((para, i) => (
               <p key={i} style={{
                 fontFamily: 'var(--font-body)',
-                fontSize: '1.05rem',
+                fontSize: '1rem',
                 color: 'var(--ink-light)',
-                lineHeight: 1.75,
+                lineHeight: 1.72,
               }}>
                 {para}
               </p>
             ))}
           </div>
 
-          {/* Education badges */}
-          <div style={{ display: 'flex', gap: '12px', marginTop: '40px', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', gap: '10px', marginTop: '30px', flexWrap: 'wrap' }}>
             {[
               'Team size: 2-20',
-              'Project budgets: $150-$5,000',
+              'Budget range: $150-$5,000',
               'Primary market: Ghana / West Africa',
+              'Delivery mode: remote-friendly',
             ].map(badge => (
               <span key={badge} style={{
                 fontFamily: 'var(--font-mono)',

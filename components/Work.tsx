@@ -9,6 +9,7 @@ export default function Work({ projects }: WorkProps) {
   return (
     <section
       id="work"
+      data-motion="medium"
       style={{
         padding: 'clamp(80px, 12vw, 140px) 40px',
         maxWidth: '1200px',
@@ -18,7 +19,7 @@ export default function Work({ projects }: WorkProps) {
       }}
     >
       <div
-        className="work-art work-art-grid"
+        className="work-art work-art-grid motion-layer motion-layer-medium"
         aria-hidden="true"
         style={{
           position: 'absolute',
@@ -35,7 +36,7 @@ export default function Work({ projects }: WorkProps) {
         }}
       />
       <div
-        className="work-art work-art-dot"
+        className="work-art work-art-dot motion-layer motion-layer-fast"
         aria-hidden="true"
         style={{
           position: 'absolute',

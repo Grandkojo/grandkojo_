@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 
 const links = [
   { label: 'About', href: '/#about' },
+  { label: 'How It Works', href: '/#how-it-works' },
   { label: 'Services', href: '/#services' },
   { label: 'Work', href: '/#work' },
   { label: 'Connect', href: '/#connect' },
@@ -38,7 +39,7 @@ export default function Nav() {
           alignItems: 'center',
           justifyContent: 'space-between',
           transition: 'padding 0.5s cubic-bezier(0.16, 1, 0.3, 1), background 0.5s cubic-bezier(0.16, 1, 0.3, 1), backdrop-filter 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
-          background: scrolled ? 'rgba(245, 240, 232, 0.88)' : 'transparent',
+          background: scrolled ? 'rgba(245, 240, 232, calc(0.78 + (var(--scroll-progress, 0) * 0.14)))' : 'transparent',
           backdropFilter: scrolled ? 'blur(12px)' : 'none',
           borderBottom: scrolled ? '1px solid rgba(212, 201, 168, 0.5)' : '1px solid transparent',
         }}

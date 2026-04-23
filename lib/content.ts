@@ -18,6 +18,8 @@ export interface CaseStudyItem {
   challenge: string
   solution: string
   outcome: string
+  videoUrl?: string
+  photos?: string[]
 }
 
 export const defaultServices: ServiceItem[] = [
@@ -67,5 +69,13 @@ export const defaultCaseStudies: CaseStudyItem[] = [
       'Implemented a 3-part automated pipeline: personalized first response with clear CTAs, instant proposal generation for qualified requests, and automated no-response status updates to keep the pipeline clean.',
     outcome:
       'The team now reviews fewer but better leads, reaches qualified prospects faster, and cut the lead handling cycle by about 50%.',
+    videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4',
+    photos: [
+      'https://picsum.photos/seed/leadflow-1/1200/750',
+      'https://picsum.photos/seed/leadflow-2/1200/750',
+      'https://picsum.photos/seed/leadflow-3/1200/750',
+      'https://picsum.photos/seed/leadflow-4/1200/750',
+      'https://picsum.photos/seed/leadflow-5/1200/750',
+    ],
   },
 ]

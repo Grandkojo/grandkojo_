@@ -1,7 +1,10 @@
+const HERO_BG_VIDEO_MP4 = '/imgs/hero_background.mp4'
+
 export default function Hero() {
   return (
     <section
       id="hero"
+      data-motion="fast"
       style={{
         minHeight: '100vh',
         position: 'relative',
@@ -10,43 +13,51 @@ export default function Hero() {
         justifyContent: 'center',
         padding: '40px 40px 60px',
         overflow: 'hidden',
+        background: 'linear-gradient(180deg, rgba(237, 229, 208, 0.58), rgba(245, 240, 232, 0.92))',
       }}
     >
+      <div className="hero-video-layer" aria-hidden="true">
+        <video className="hero-video-media" autoPlay muted loop playsInline preload="metadata">
+          <source src={HERO_BG_VIDEO_MP4} type="video/mp4" />
+        </video>
+        <div className="hero-video-overlay" />
+      </div>
+
       {/* Background texture rings */}
-      <div style={{
+      <div className="hero-motion-layer hero-motion-layer-fast" style={{
         position: 'absolute',
         top: '10%',
         right: '-5%',
         width: '600px',
         height: '600px',
         borderRadius: '50%',
-        border: '1px solid rgba(212, 201, 168, 0.5)',
+        border: '1.4px solid rgba(212, 201, 168, 0.66)',
         pointerEvents: 'none',
       }} />
-      <div style={{
+      <div className="hero-motion-layer hero-motion-layer-medium" style={{
         position: 'absolute',
         top: '5%',
         right: '-10%',
         width: '750px',
         height: '750px',
         borderRadius: '50%',
-        border: '1px solid rgba(212, 201, 168, 0.25)',
+        border: '1.35px solid rgba(212, 201, 168, 0.46)',
         pointerEvents: 'none',
       }} />
-      <div style={{
+      <div className="hero-motion-layer hero-motion-layer-slow" style={{
         position: 'absolute',
         top: '0%',
         right: '-15%',
         width: '900px',
         height: '900px',
         borderRadius: '50%',
-        border: '1px solid rgba(212, 201, 168, 0.12)',
+        border: '1.3px solid rgba(212, 201, 168, 0.34)',
         pointerEvents: 'none',
       }} />
 
       {/* Right-side art composition */}
       <div
-        className="hero-right-art"
+        className="hero-right-art hero-motion-layer hero-motion-layer-medium"
         aria-hidden="true"
         style={{
           position: 'absolute',
@@ -120,7 +131,7 @@ export default function Hero() {
 
       {/* Top label */}
       <div
-        className="hero-animate hero-animate-1 hero-top-label"
+        className="hero-animate hero-animate-1 hero-top-label hero-motion-content"
         style={{
           position: 'absolute',
           top: 'clamp(64px, 8vh, 110px)',
@@ -152,7 +163,7 @@ export default function Hero() {
 
       {/* Main heading */}
       <div
-        className="hero-heading-wrap"
+        className="hero-heading-wrap hero-motion-content"
         style={{
           maxWidth: '1100px',
           position: 'relative',
@@ -248,7 +259,7 @@ export default function Hero() {
 
       {/* Bottom right scroll indicator */}
       <div
-        className="hero-animate hero-animate-6"
+        className="hero-animate hero-animate-6 hero-motion-content"
         style={{
           position: 'absolute',
           bottom: '80px',

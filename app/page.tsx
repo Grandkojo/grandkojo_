@@ -1,6 +1,8 @@
 import ScrollReveal from '@/components/ScrollReveal'
+import ScrollMotion from '@/components/ScrollMotion'
 import Nav from '@/components/Nav'
 import Hero from '@/components/Hero'
+import HowItWorks from '@/components/HowItWorks'
 import Ticker from '@/components/Ticker'
 import About from '@/components/About'
 import Services from '@/components/Services'
@@ -19,10 +21,12 @@ export default async function Home() {
   return (
     <>
       <VisitTracker />
+      <ScrollMotion />
       <ScrollReveal />
       <Nav />
       <main>
         <Hero />
+        <HowItWorks />
         <Ticker />
         <About />
         <Services services={services} />
