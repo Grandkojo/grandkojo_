@@ -162,27 +162,7 @@ export default function HowItWorks({ booking }: { booking?: SiteBooking }) {
             </div>
           )}
         </div>
-        <p
-          style={{
-            marginTop: '10px',
-            fontFamily: 'var(--font-mono)',
-            fontSize: '0.66rem',
-            letterSpacing: '0.08em',
-            textTransform: 'uppercase',
-            color: 'var(--parchment-text)',
-          }}
-        >
-          If the player is blocked,{' '}
-          <a
-            href={watchUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ color: 'var(--rust)' }}
-          >
-            {videoId ? 'watch on YouTube' : 'open the video link'}
-          </a>
-          .
-        </p>
+        
       </div>
 
       <div

@@ -13,6 +13,9 @@ import VisitTracker from '@/components/visit-tracker'
 import { getSiteBooking } from '@/lib/booking'
 import { getCaseStudiesData, getServicesData } from '@/lib/site-data'
 
+/** Firestore-backed sections must not use build-time snapshots; booking/admin edits must show on next request. */
+export const dynamic = 'force-dynamic'
+
 export default async function Home() {
   const [services, caseStudies, booking] = await Promise.all([
     getServicesData(),

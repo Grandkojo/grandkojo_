@@ -143,6 +143,8 @@ add_env_if_set "NEXT_PUBLIC_FIREBASE_PROJECT_ID"
 add_env_if_set "NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET"
 add_env_if_set "NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID"
 add_env_if_set "NEXT_PUBLIC_FIREBASE_APP_ID"
+# Same DB as local; omit only if you rely on default grandkojo-site in code.
+add_env_if_set "FIREBASE_CLIENT_DB_ID"
 
 DEPLOY_ARGS=(
   "--image=${IMAGE_URI}"
@@ -154,6 +156,11 @@ DEPLOY_ARGS=(
 
 if [ ${#ENV_VARS[@]} -gt 0 ]; then
   DEPLOY_ARGS+=("--set-env-vars=$(IFS=,; echo "${ENV_VARS[*]}")")
+fi
+
+# Service account JSON is too large/fragile for comma-separated --set-env-vars; use Secret Manager and set FIREBASE_ADMIN_SECRET in .env.local to SECRET_NAME:VERSION (e.g. firebase-admin-json:latest).
+if [ -n "${FIREBASE_ADMIN_SECRET:-}" ]; then
+  DEPLOY_ARGS+=("--set-secrets=FIREBASE_ADMIN_SERVICE_ACCOUNT_JSON=${FIREBASE_ADMIN_SECRET}")
 fi
 
 gcloud run deploy "${SERVICE_NAME}" "${DEPLOY_ARGS[@]}"
