@@ -1,5 +1,14 @@
-export default function Connect() {
-  const CALENDLY_URL = 'https://calendly.com/essienernest-kojoowusu/30min'
+import { defaultSiteBooking, type SiteBooking } from '@/lib/booking'
+
+const CALENDLY_URL = 'https://calendly.com/essienernest-kojoowusu/30min'
+
+type ConnectProps = {
+  booking?: SiteBooking
+}
+
+export default function Connect({ booking }: ConnectProps) {
+  const resolved = booking ?? defaultSiteBooking
+  const isBooked = resolved.status === 'booked'
 
   return (
     <section
@@ -130,24 +139,7 @@ export default function Connect() {
               essienernest.kojoowusu@gmail.com
             </a>
 
-            <a
-              href={CALENDLY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="link-underline"
-              style={{
-                fontFamily: 'var(--font-mono)',
-                fontSize: '0.66rem',
-                letterSpacing: '0.08em',
-                textTransform: 'uppercase',
-                color: 'var(--parchment-text)',
-                marginBottom: '26px',
-                display: 'inline-block',
-                textDecoration: 'none',
-              }}
-            >
-              Book a 30-min call on Calendly
-            </a>
+           
 
             <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
               {[
@@ -203,18 +195,20 @@ export default function Connect() {
                 width: '8px',
                 height: '8px',
                 borderRadius: '50%',
-                background: '#4CAF50',
-                boxShadow: '0 0 10px rgba(76, 175, 80, 0.6)',
-                animation: 'pulse 2s infinite',
+                background: isBooked ? '#E57373' : '#4CAF50',
+                boxShadow: isBooked
+                  ? '0 0 10px rgba(229, 115, 115, 0.45)'
+                  : '0 0 10px rgba(76, 175, 80, 0.6)',
+                animation: isBooked ? 'none' : 'pulse 2s infinite',
               }} />
               <span style={{
                 fontFamily: 'var(--font-mono)',
                 fontSize: '0.65rem',
                 letterSpacing: '0.12em',
                 textTransform: 'uppercase',
-                color: '#4CAF50',
+                color: isBooked ? '#E57373' : '#4CAF50',
               }}>
-                Open for new engagements
+                {isBooked ? 'Currently booked' : 'Open for new engagements'}
               </span>
             </div>
 
@@ -228,27 +222,50 @@ export default function Connect() {
               Ideal for health, legal, and real estate teams with 2-20 people that need dependable systems, not just prototypes.
             </p>
 
-            <a
-              href={CALENDLY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="connect-cta-button"
-              style={{
+            {isBooked ? (
+              <p style={{
                 fontFamily: 'var(--font-mono)',
                 fontSize: '0.72rem',
-                letterSpacing: '0.1em',
-                textTransform: 'uppercase',
-                color: 'var(--ink)',
-                background: 'var(--cream)',
-                padding: '12px 24px',
-                textDecoration: 'none',
-                borderRadius: '2px',
-                display: 'inline-block',
-                transition: 'background 0.3s',
-              }}
-            >
-              Book discovery call
-            </a>
+                letterSpacing: '0.06em',
+                color: 'rgba(245, 240, 232, 0.85)',
+                lineHeight: 1.6,
+                marginBottom: '8px',
+              }}>
+                Discovery calls are paused for now.
+                {resolved.reachBackAt
+                  ? (
+                    <>
+                      {' '}
+                      Reach back after{' '}
+                      <span style={{ color: 'var(--cream)' }}>{resolved.reachBackAt}</span>
+                      .
+                    </>
+                    )
+                  : ' New slots will be posted here when they open.'}
+              </p>
+            ) : (
+              <a
+                href={CALENDLY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="connect-cta-button"
+                style={{
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: '0.72rem',
+                  letterSpacing: '0.1em',
+                  textTransform: 'uppercase',
+                  color: 'var(--ink)',
+                  background: 'var(--cream)',
+                  padding: '12px 24px',
+                  textDecoration: 'none',
+                  borderRadius: '2px',
+                  display: 'inline-block',
+                  transition: 'background 0.3s',
+                }}
+              >
+                Book discovery call
+              </a>
+            )}
           </div>
         </div>
       </div>

@@ -10,12 +10,14 @@ import Work from '@/components/Work'
 import Connect from '@/components/Connect'
 import Footer from '@/components/Footer'
 import VisitTracker from '@/components/visit-tracker'
+import { getSiteBooking } from '@/lib/booking'
 import { getCaseStudiesData, getServicesData } from '@/lib/site-data'
 
 export default async function Home() {
-  const [services, caseStudies] = await Promise.all([
+  const [services, caseStudies, booking] = await Promise.all([
     getServicesData(),
     getCaseStudiesData(),
+    getSiteBooking(),
   ])
 
   return (
@@ -26,12 +28,12 @@ export default async function Home() {
       <Nav />
       <main>
         <Hero />
-        <HowItWorks />
+        <HowItWorks booking={booking} />
         <Ticker />
         <About />
         <Services services={services} />
         <Work projects={caseStudies} />
-        <Connect />
+        <Connect booking={booking} />
       </main>
       <Footer />
     </>

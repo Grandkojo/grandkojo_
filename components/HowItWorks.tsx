@@ -1,3 +1,5 @@
+import type { SiteBooking } from '@/lib/booking'
+
 const HOW_IT_WORKS_VIDEO_URL = process.env.HOW_IT_WORKS_VIDEO_URL || 'https://youtu.be/Hfm94aHAbYQ?si=LJE487C7glIait65'
 const CALENDLY_URL = 'https://calendly.com/essienernest-kojoowusu/30min'
 
@@ -41,7 +43,8 @@ function isValidHttpUrl(url: string): boolean {
   }
 }
 
-export default function HowItWorks() {
+export default function HowItWorks({ booking }: { booking?: SiteBooking }) {
+  const isBooked = booking?.status === 'booked'
   const normalizedVideoUrl = HOW_IT_WORKS_VIDEO_URL.trim()
   const videoId = getYouTubeVideoId(normalizedVideoUrl)
   const embedUrl = videoId
@@ -244,25 +247,48 @@ export default function HowItWorks() {
         ))}
       </div>
 
-      <a
-        href={CALENDLY_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{
-          fontFamily: 'var(--font-mono)',
-          fontSize: '0.72rem',
-          letterSpacing: '0.09em',
-          textTransform: 'uppercase',
-          color: 'var(--cream)',
-          background: 'var(--ink)',
-          padding: '10px 18px',
-          textDecoration: 'none',
-          borderRadius: '2px',
-          display: 'inline-block',
-        }}
-      >
-        Book a project call
-      </a>
+      {isBooked ? (
+        <p
+          style={{
+            fontFamily: 'var(--font-mono)',
+            fontSize: '0.72rem',
+            letterSpacing: '0.09em',
+            textTransform: 'uppercase',
+            color: 'var(--ink-light)',
+            border: '1px solid rgba(26, 26, 26, 0.2)',
+            padding: '10px 18px',
+            borderRadius: '2px',
+            display: 'inline-block',
+            maxWidth: '420px',
+            lineHeight: 1.5,
+          }}
+        >
+          Project calls are paused.
+          {booking?.reachBackAt
+            ? ` Check back after ${booking.reachBackAt}.`
+            : ' New booking windows will be announced here.'}
+        </p>
+      ) : (
+        <a
+          href={CALENDLY_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            fontFamily: 'var(--font-mono)',
+            fontSize: '0.72rem',
+            letterSpacing: '0.09em',
+            textTransform: 'uppercase',
+            color: 'var(--cream)',
+            background: 'var(--ink)',
+            padding: '10px 18px',
+            textDecoration: 'none',
+            borderRadius: '2px',
+            display: 'inline-block',
+          }}
+        >
+          Book a project call
+        </a>
+      )}
 
       <style>{`
         @media (max-width: 768px) {
